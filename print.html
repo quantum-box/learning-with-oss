@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Chapter 1</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Chapter 1</a></li><li class="chapter-item expanded "><a href="fast_mvp/index.html"><strong aria-hidden="true">2.</strong> 高速な MVP 開発</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -136,6 +136,44 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="chapter-1"><a class="header" href="#chapter-1">Chapter 1</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="高速な-mvp-開発"><a class="header" href="#高速な-mvp-開発">高速な MVP 開発</a></h1>
+<blockquote>
+<p>node.js のバージョン管理は <code>volta</code> を使用しています<br />
+<code>volta install node@16</code></p>
+</blockquote>
+<h2 id="nextjs-アプリfrontendの初期化"><a class="header" href="#nextjs-アプリfrontendの初期化">Next.js アプリ(frontend)の初期化</a></h2>
+<p>shell で以下コマンドを打ち、実行します</p>
+<pre><code class="language-shell">yarn create next-app --typescript fast-mvp-frontend
+</code></pre>
+<h2 id="nestjs-アプリbackendの初期化"><a class="header" href="#nestjs-アプリbackendの初期化">Nest.js アプリ(backend)の初期化</a></h2>
+<pre><code class="language-shell">yarn global add @nestjs/cli
+nest new fast-mvp-backend
+</code></pre>
+<p><a href="https://docs.nestjs.com/#installation">nestjs#installation</a></p>
+<p>package manager は yarn を選択します</p>
+<pre><code class="language-? Which package manager would you ❤️  to use?">? Which package manager would you ❤️  to use?
+  npm
+❯ yarn
+  pnpm
+</code></pre>
+<p>以下のように出力されると成功です</p>
+<pre><code>🚀  Successfully created project fast-mvp-backend
+👉  Get started with the following commands:
+
+$ cd fast-mvp-backend
+$ yarn run start
+
+
+                          Thanks for installing Nest 🙏
+                 Please consider donating to our open collective
+                        to help us maintain this package.
+
+
+               🍷  Donate: https://opencollective.com/nest
+</code></pre>
+<p>このままだとコミットできないので <code>.git/</code> ディレクトリを削除して git 管理下から外す必要があります。</p>
+<pre><code>rm -rf fast-mvp-backend/.git
+</code></pre>
 
                     </main>
 
