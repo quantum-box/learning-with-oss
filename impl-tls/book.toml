@@ -6,3 +6,5 @@ src = "docs"
 title = "Write A TLS on Rust"
 [preprocessor.plantuml]
 plantuml-cmd="http://www.plantuml.com/plantuml"
+[output.html]
+git-repository-url = "https://github.com/quantum-box/learning-with-oss"
