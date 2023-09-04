@@ -21,8 +21,7 @@ jobs:
         with:
           crate: mdbook-plantuml
           version: "0.8.0"
-          features:
-            - "plantuml-server"
+          features: "plantuml-server"
 
       - run: mdbook build ./impl-tls
 
