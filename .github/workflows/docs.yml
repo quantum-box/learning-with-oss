@@ -16,6 +16,14 @@ jobs:
         with:
           mdbook-version: '0.4.34'
 
+      - name: Install mdbook-plantuml
+        uses: baptiste0928/cargo-install@v2
+        with:
+          crate: mdbook-plantuml
+          version: "0.8.0"
+          features:
+            - "plantuml-server"
+
       - run: mdbook build ./impl-tls
 
       - name: Deploy
