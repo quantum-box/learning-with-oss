@@ -1,0 +1,25 @@
+[workspace]
+members = [
+    "client",
+]
+resolver = "2"
+
+[workspace.package]
+authors = ["megumsih <megumish@quantum-box.com>"]
+categories = ["learning"]
+description = "implementation my tls"
+documentation = ""
+edition = "2021"
+exclude = []
+homepage = "https://github.com/quantum-box/learning-with-oss"
+include = []
+keywords = ["gitops", "ci", "cd"]
+license = "MIT"
+publish = false
+readme = "./README.md"
+repository = "https://github.com/quantum-box/learning-with-oss"
+rust-version = "1.72"
+version = "0.1.0"
+
+[workspace.dependencies]
+tokio = { version = "1.32", features = ["rt", "rt-multi-thread", "macros"] }

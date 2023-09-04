@@ -1,0 +1,8 @@
+[book]
+authors = ["Takanori Fukuyama", "megumish", "Masayuki Kamata"]
+language = "ja"
+multilingual = false
+src = "docs"
+title = "Write A TLS on Rust"
+[preprocessor.plantuml]
+plantuml-cmd="http://www.plantuml.com/plantuml"
