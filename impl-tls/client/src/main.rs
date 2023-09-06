@@ -1,5 +1,5 @@
 use std::error::Error;
-use tokio::io::AsyncWriteExt;
+use tokio::io::{AsyncReadExt, AsyncWriteExt};
 use tokio::net::TcpStream;
 
 #[tokio::main]
@@ -9,6 +9,12 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
     // Write some data.
     stream.write_all(b"hello world!").await?;
+
+    // Read data from stream.
+    let mut buffer = Vec::new();
+    stream.read_buf(&mut buffer).await?;
+
+    dbg!(String::from_utf8(buffer)?);
 
     Ok(())
 }
