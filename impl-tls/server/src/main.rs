@@ -1,4 +1,4 @@
-use tokio::io::{AsyncReadExt, AsyncWriteExt, BufReader, BufWriter};
+use tokio::io::{AsyncReadExt, AsyncWriteExt};
 use tokio::net::TcpListener;
 
 #[tokio::main]
@@ -22,8 +22,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                         return;
                     }
                 };
-                eprintln!("read {} bytes", n);
-                eprintln!("buf: {:?}", &buf[0..n]);
 
                 // Write the data back
                 if let Err(e) = socket.write_all(&buf[0..n]).await {
