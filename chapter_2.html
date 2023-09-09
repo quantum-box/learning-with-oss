@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Chapter 2 - Write A TLS on Rust</title>
+        <title>Chapter 2 Echo Server を作ろう - Write A TLS on Rust</title>
 
 
         <!-- Custom HTML head -->
@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Chapter 1</a></li><li class="chapter-item expanded "><a href="chapter_2.html" class="active"><strong aria-hidden="true">2.</strong> Chapter 2</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Chapter 1</a></li><li class="chapter-item expanded "><a href="chapter_2.html" class="active"><strong aria-hidden="true">2.</strong> Chapter 2 Echo Server を作ろう</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -170,44 +170,34 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="いざ実装"><a class="header" href="#いざ実装">いざ実装</a></h1>
-<p>echo server作ろう</p>
+<p>echo server 作ろう</p>
 <p>そしたらやり取りができる！</p>
 <p>tokio
-ioをうまくやるための非同期ランタイムだから当然ネットワークのIOもやれるはず！</p>
-<p>ってことでTCP Echoを作ってみよう</p>
+io をうまくやるための非同期ランタイムだから当然ネットワークの IO もやれるはず！</p>
+<p>ってことで TCP Echo を作ってみよう</p>
 <p>Server
 https://docs.rs/tokio/1.32.0/tokio/index.html#examples</p>
 <p>Client
 https://docs.rs/tokio/1.32.0/tokio/net/struct.TcpStream.html#examples</p>
-<p>exampleを参考にして、サーバーとクライアント、やりとりができるものを最小で作ろう</p>
-<pre><code class="language-shell">cargo run -p server
-cargo run -p client
+<p>example を参考にして、サーバーとクライアント、やりとりができるものを最小で作ろう</p>
+<pre><code class="language-shell">cargo run -p server --bin chapter2_echo
+cargo run -p client --bin chapter2_echo
 </code></pre>
 <p><a href="https://github.com/quantum-box/learning-with-oss/commit/22d49ec482805b937474e973ec74a8b5e623250c">コミット</a></p>
-<p>dbg!でログを仕込み以下を実行する</p>
-<pre><code class="language-shell">cargo run -p server
-cargo run -p client
+<p>println!で標準出力にログを仕込み以下を実行する</p>
+<pre><code class="language-shell">cargo run -p server --bin chapter2_echo
+cargo run -p client --bin chapter2_echo
 </code></pre>
 <p>以下のようなログが表示される</p>
-<pre><code class="language-shell">learning-with-oss/impl-tlscargo run -p server
-   Compiling server v0.1.0 (/Users/megumish/github/learning-with-oss/impl-tls/server)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.28s
-     Running `target/debug/server`
-[server/src/main.rs:26] n = 12
-[server/src/main.rs:27] &amp;buf[0..n] = [
-    104,
-    101,
-    108,
-    108,
-    111,
-    32,
-    119,
-    111,
-    114,
-    108,
-    100,
-    33,
-]
+<pre><code class="language-shell">$ cargo run -p server --bin chapter2_echo
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+     Running `target/debug/chapter2_echo`
+received message: hello world!
+</code></pre>
+<pre><code class="language-shell">$ cargo run -p client --bin chapter2_echo
+    Finished dev [unoptimized + debuginfo] target(s) in 0.02s
+     Running `target/debug/chapter2_echo`
+received message: hello world!
 </code></pre>
 
                     </main>
