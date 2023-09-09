@@ -23,7 +23,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                     }
                 };
 
-                println!("{}", String::from_utf8_lossy(&buf[..n]));
+                println!("received message: {}", String::from_utf8_lossy(&buf[..n]));
 
                 // Write the data back
                 if let Err(e) = socket.write_all(&buf[0..n]).await {

@@ -15,7 +15,10 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let mut buffer = [0; 1024];
     let length = reader.read(&mut buffer).await?;
 
-    println!("{}", String::from_utf8_lossy(&buffer[..length]));
+    println!(
+        "received message: {}",
+        String::from_utf8_lossy(&buffer[..length])
+    );
 
     //let mut buffer = Vec::new();
     //stream.read_buf(&mut buffer).await?;
