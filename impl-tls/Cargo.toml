@@ -27,3 +27,4 @@ tokio = { version = "1.32", features = [
     "net",
     "io-util",
 ] }
+byteorder = "1.4"

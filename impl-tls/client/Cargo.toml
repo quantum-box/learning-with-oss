@@ -29,3 +29,4 @@ path = "src/chapter3_client_hello_builder.rs"
 
 [dependencies]
 tokio.workspace = true
+byteorder.workspace = true
